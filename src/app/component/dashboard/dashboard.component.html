@@ -1,0 +1,298 @@
+<style>
+    @import url('http://fonts.googleapis.com/css?family=ArimaMadurai:300');
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-family: 'Arima Madurai', cursive;
+        color: black;
+        font-size: 4rem;
+        letter-spacing: -3px;
+        text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.6);
+        position: relative;
+        z-index: 3;
+    }
+
+    .container {
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 35rem;
+        background-image: linear-gradient(to bottom, rgba(255, 168, 76, 0.6) 0%, rgba(255, 123, 13, 0.6)100%),
+            url('http://images.unsplash.com/photo-144824505046-e4305ffb17f');
+        background-blend-mode: soft-light;
+        background-size: cover;
+        background-position: center center;
+        padding: 2rem;
+    }
+
+    .bird {
+        background-image: url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+        background-size: auto 100%;
+        width: 88px;
+        height: 125px;
+        will-change: background-position;
+
+        animation-name: fly-cycle;
+        animation-timing-function: steps(10);
+        animation-iteration-count: infinite;
+
+
+        --one:
+            animation-duration: 1s;
+            animation-delay: 0.6s;
+        
+
+        --two:
+            animation-duration: 16s;
+            animation-delay: 1s;
+        
+
+        --three:
+            animation-duration: 14.6s;
+            animation-delay: 9.5s;
+        
+
+        --four:
+            animation-duration: 16s;
+            animation-delay: 10.25s;
+        
+    }
+
+    .bird-container {
+        position: absolute;
+        top: 20%;
+        left: -10%;
+        transform: scale(0) translateX(-10vw);
+        will-change: transform;
+
+        animation-name: fly-right-one;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+
+
+        --one:
+            animation-duration: 15s;
+            animation-delay: 0s;
+        
+
+        --two:
+            animation-duration: 16s;
+            animation-delay: 1s;
+        
+
+        --three:
+            animation-duration: 14.6s;
+            animation-delay: 9.5s;
+        
+
+        --four :
+            animation-duration: 16s;
+            animation-delay: 10.25s;
+        
+    }
+
+    @keyframes fly-cycle {
+
+        100% {
+            background-position: -900px;
+        }
+
+    }
+
+    @keyframes fly-right-one {
+
+        0% {
+            transform: scale(0.3) transplateX(-10vw);
+        }
+
+        10% {
+            transform: translateY(2vh) translateX(10vw) scale(0.4);
+        }
+
+        20% {
+            transform: translateY(0vh) translateX(30vw) scale(0.5)
+        }
+
+        30% {
+            transform: translateY(4vh) translateX(50vw) scale(0.6)
+        }
+
+        40% {
+            transform: translateY(2vh) translateX(70vw) scale(0.6)
+        }
+
+        50% {
+            transform: translateY(0vh) translateX(90vw) scale(0.6)
+        }
+
+        60% {
+            transform: translateY(0vh) translateX(100vw) scale(0.6)
+        }
+
+        100% {
+            transform: translateY(0vh) translateX(100vw) scale(0.6)
+        }
+    }
+
+    @keyframes fly-right-two {
+
+        0% {
+            transform: translateY(-2vh) transplateX(-10vw) scale(0.5);
+        }
+
+        10% {
+            transform: translateY(0vh) translateX(10vw) scale(0.4);
+        }
+
+        20% {
+            transform: translateY(-4vh) translateX(30vw) scale(0.6)
+        }
+
+        30% {
+            transform: translateY(1vh) translateX(50vw) scale(0.6)
+        }
+
+        40% {
+            transform: translateY(-2.5vh) translateX(70vw) scale(0.6)
+        }
+
+        50% {
+            transform: translateY(0vh) translateX(90vw) scale(0.45)
+        }
+
+        51% {
+            transform: translateY(0vh) translateX(110vw) scale(0.45)
+        }
+
+        100% {
+            transform: translateY(0vh) translateX(100vw) scale(0.45)
+        }
+    }
+</style>
+
+<style>
+    .button{
+        --offset: 10px;
+        --border-size: 2px;
+
+        display: block;
+        position: relative;
+        padding: 1.5em 3em;
+        appearance: none;
+        border: 0;
+        background: transparent;
+        letter-spacing: .25em;
+        outline: none;
+        cursor: pointer;
+        font-weight: 0;
+        box-shadow: inset 0 0 0 var(--border-size) currentColor;
+        transition: margin-right 4s ease-in-out 1s;
+
+        
+        /* &_horizontal,
+        &_vertical {
+            position: absolute;
+            top: var(--horizontal-offset, 0);
+            right: var(--vertical-offset, 0);
+            bottom: var(--horizontal-offset, 0);
+            left: var(--vertical-offset, 0);
+            transition: transform .8s ease;
+            will-change: transform;
+
+            &::before {
+                content: '';
+                position: absolute;
+                border: inherit;
+            }
+        } */
+
+        /* &__horizontal {
+            --vertical-offset: calc(var(--offset) * -1);
+            border-top: var(--border-size) solid currentColor;
+            border-bottom: var(--border-size) solid currentColor;
+        
+        
+        &::before {
+            top: calc(var(--vertical-offset) - var(--border-size));
+            bottom: calc(var(--vertical-offset) - var(--border-size));
+            left: calc(var(--vertical-offset) * -1);
+            right: calc(var(--vertical-offset) * -1);
+        }
+    } */
+
+    /* &__horizontal {
+        --vertical-offset: calc(var(--offset) * -1);
+        border-top: var(--border-size) solid currentColor;
+        border-bottom: var(--border-size) solid currentColor; */
+
+    /* &::before {
+        top: calc(var(--vertical-offset) - var(--border-size));
+        bottom: calc(var(--vertical-offset) - var(--border-size));
+        left: calc(var(--vertical-offset) * -1);
+        right: calc(var(--vertical-offset) * -1); */
+    }  
+  
+/* 
+  &:hover &__horizontal {
+    transform: scaleX(0);
+  } */
+
+ /* :vertical {
+
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid currentColor;
+    border-right: var(--border-size) solid currentColor; */
+
+       /* before {
+        top: calc(var(--horizontal-offset) * -1);
+        :bottom calc(var(--horizontal-offset) * -1);
+        :left calc(var(--horizontal-offset) - var(--border-size));
+        :right calc(var(--horizontal-offset) - var(-border-size)); 
+    } */
+  
+
+
+
+</style>
+
+<div class="container">
+    <div class="nav-bar">
+        <button [routerLink]="['/dashboard/home']">Home</button>
+        <button [routerLink]="['/dashboard/customer']">Customer Details</button>
+        <button [routerLink]="['/dashboard/customerform']">Customer Form</button>
+        <button [routerLink]="['/dashboard/user']">User Details</button>
+        <button [routerLink]="['/dashboard/order']">Order</button>
+        <button [routerLink]="['/dashboard/analysis']">Data Analysis</button>
+        <button [routerLink]="['/dashboard/contactus']">Contact Us</button>
+
+    </div>
+</div>
+    <div class="bird-container bird-container--one">
+        <div class="bird bird--one"></div>
+    </div>
+    <div class="bird-container bird-container--two">
+        <div class="bird bird--two"></div>
+    </div>
+    <div class="bird-container bird-container--three">
+        <div class="bird bird--three"></div>
+    </div>
+    <div class="bird-container bird-container--four">
+        <div class="bird bird--four"></div>
+    </div>
+
+
+<style>
+
+</style>
+
+
+
+<router-outlet></router-outlet>

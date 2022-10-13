@@ -1,0 +1,72 @@
+<!-- <form ngForm>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" >
+    </div>
+    <style>
+        #wrapper {
+    background: grey;
+}
+    </style>
+    <div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" [(ngModel)]="model.age" name="age">
+        </div>
+
+        <button type="submit" class="btn btn-danger" (click)=" createCustomer()">Submit</button> <span>   </span>
+        <button type="edit" class="btn btn-danger" (click)=" confirmEditCustomer()">Edit</button> 
+
+    </div>
+</form>
+
+<input type="number" class="form-control" id="age" [(ngModel)]="model.age" name="age">
+
+
+<table class="table">
+    <tr> 
+        <th>id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>address</th>
+        <th>location</th>
+        <th>country</th>
+    </tr>
+
+<tr *ngFor= 'let user of getData'>
+    <td>{{user.id}}</td>
+    <td>{{user.first_name}}</td>
+    <td>{{user.last_name}}</td>
+    <td>{{user.address}}</td>
+    <td>{{user.location}}</td>
+    <td>{{user.country}}</td>
+</tr>
+
+</table> -->
+
+
+<form ngform>
+    <div class="form-group">
+        <label for="name">
+            <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+        </label>
+    </div>
+    <div>
+        <div class="form-group">..</div>
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" required[(ngModel)]="model.age" name="age">
+        <button type="submit" class="btn btn-danger" (click)=" createCustomer()">
+            Submit</button>
+        <button type="submit" class="btn btn-warning" (click)="confirmEditCustomer()"> Confirm Edit</button>
+    </div>
+</form>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+</div>

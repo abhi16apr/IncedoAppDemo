@@ -1,0 +1,16 @@
+<div>
+    <h1>Hello Welcome! </h1>
+      <h3>Create An Account</h3>
+       <form ngForm>
+         <div>
+           <label for="username">Username</label>
+           <input type="text" class="form-control" id="username" [(ngModel)]="newSignUp.username"  name="username">
+           <label for="password">Password</label>
+           <input type="password" class="form-control" id="password" [(ngModel)]="newSignUp.password"  name="password">
+           
+         </div>
+         <button type="submit" class="btn btn-success" (click)="signUp()">Submit</button>
+         <span>Already have an account? 
+         <a routerLink="/login">signIn</a></span>
+       </form>
+    </div>
